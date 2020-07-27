@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="images/b_1.jpg">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <div id="home">
+        <div class="custom_navbar">
+            <span class="topnav">
+                <a href="#" onclick="changeSection(1);" id="1">Home</a>
+                <a href="#register" onclick="changeSection(2);" id="2">Registration</a>
+                <a href="#list_students" onclick="changeSection(3);" id="3">Student List</a>
+            </span>
+        </div>
+        <div class="jumbotron shadow">
+            <div data-aos="fade-up"><h1 class="text_label">Online Book Library </h1></div>
+           
+        </div>
+        <div>
+        
+            <div class="container">
+                    <div class="card">
+                        <div class="card-body" data-aos="zoom-in">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src='images/b_1.jpg' class="info_card_image"/>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h4 class="text-center">“A room without books is like a body without a soul.” </h4>
+                                    <p style="padding: 5%;" class="text-center">
+ A book is a written or printed sheet of pages of information. The information may be related to various subject and topics. The internet world has also introduced electronic form of books known as e-books.
+
+Today books are printed almost in all the languages of the world. Earlier, only a few people would read books. Now, with the spread of education, more and more people are found reading books. Books are written on all subjects. There are books on literature, history, geography, mathematics etc.
+
+Books are our real friends. They are our guides. We can learn everything from them. The books contain all the great thoughts of our world and we can learn them by reading the books. The books help us find answers to our questions. The books never fail us.
+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="margin-top:40px;background-image: url('images/Flat-Mountains.svg'); opacity: 0.8;
+                    background-attachment: fixed;
+                    background-size: cover;">
+                         </div>
+            </div>
+        </div></div>
+        <div id="register" style="display:none;">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#home" onclick="changeSection(1);">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#register" onclick="changeSection(2);">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#list_students" onclick="changeSection(3);">Book issued list</a>
+                  </li>
+                </ul>
+              </nav>
+            <div class="container mt-5">
+                <div class="alert alert-success alert-dismissible fade show" style="display:none;" id='alert_register'><button type="button" class="close" data-dismiss="alert">&times;</button><strong>Registration Successful !</strong></div>
+                <div class="card">
+                    <div class="card-header" style="font-size:larger; font-weight:700;">Register Here</div>
+                    <div class="card-body">
+                            <form id="registerForm" autocomplete="off">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>First Name:</label>
+                                            <input type="text" class="form-control" id="fname" placeholder="First Name"/>
+                                            <div id="fnamealert"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Last Name:</label>
+                                            <input type="text" class="form-control" id="lname" placeholder="Last Name"/>
+                                            <div id="lnamealert"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Department</label>
+                                        <select id="dept" class="custom-select">
+                                            <option value="invalid" disabled selected>Choose Department</option>
+                                            <option>Computer Engineering</option>
+                                            <option>Information Technology</option>
+                                        </select>
+                                        <div id="deptalert"></div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="font-weight">Gender:</label><br/><center>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="gender1">
+                                            <label class="custom-control-label" for="gender1">Male</label>
+                                          </div>
+                                          <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" id="gender2">
+                                            <label class="custom-control-label" for="gender2">Female</label>
+                                          </div></center>
+                                          <div id="genderalert"></div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Mobile No.:</label>
+                                            <input type="text" id="mobileno" onkeypress="return isNumberKey(event);" placeholder="Mobile No" class='form-control'/>
+                                            <div id="mobilenoalert"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Email:</label>
+                                            <input type="text" id="email" placeholder="Email" class='form-control'/>
+                                            <div id="emailalert"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Book Types:</label><br/>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Action and Adventure</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                            <label class="custom-control-label" for="customCheck2">Comic Book or Graphic Novel.
+</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                            <label class="custom-control-label" for="customCheck3">Historical Fiction
+</label>
+                                        </div>
+                                        <div id="technologiesalert"></div>
+                                    </div>
+                                    <div class="col-sm-6"><br/><br/>
+                                        <button onclick="checkValidation();" id='submit' class="btn btn-block btn-lg btn-outline-success">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Submit</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="list_students" style="display:none;">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#home" onclick="changeSection(1);">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#register" onclick="changeSection(2);">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#list_students" onclick="changeSection(3);">List Students</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="container mt-5">
+                  <div id="no-data-alert" class="alert alert-danger central-block" style="display:none; height:60px;"><strong>No Data Found</strong></div>
+                  <h2 class="text-center mb-4" id="headline">Registred Students</h2>
+                  <table id='data_table' class="table table-hover table-responsive">
+                      <thead class="thead-dark">
+                          <tr>
+                              <th class="align-middle">TimeStamp</th>
+                              <th class="align-middle">Full Name</th>
+                              <th class="align-middle">Gender</th>
+                              <th class="align-middle">Department</th>
+                              <th class="align-middle">Email</th>
+                              <th class="align-middle">Mobile No.</th>
+                              <th class="align-middle">Technologies Known</th>
+                          </tr>
+                      </thead>
+                      <tbody id='list_table_id'>
+                          
+                      </tbody>
+                  </table>
+              </div>
+        </div>
+        </div>
+        <div class='footer' style="margin-top:60px;">
+        </div>
+        <!-- Files Imported for Bootstrap-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="js/designScript.js"></script>
+        
+        <script>
+            AOS.init({
+                duration:1200,
+            });
+          </script>
+              </body>
+</html>
